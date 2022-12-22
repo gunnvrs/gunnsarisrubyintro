@@ -22,7 +22,7 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-  hello(name)
+  return ("Hello, #{name}")
 end
 
 def starts_with_consonant? s
@@ -63,4 +63,23 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  attr_accessor :isbn
+  attr_accessor :price
+  def initialize(isbn,price)
+    if isbn.empty?
+      raise ArgumentError
+    end
+    if price <= 0
+      raise ArgumentError
+    end
+
+    @isbn = isbn
+    @price = price
+
+    def price_as_string()
+      return "$%0.2f" % [@price]
+    end
+  end
+
+  
 end
