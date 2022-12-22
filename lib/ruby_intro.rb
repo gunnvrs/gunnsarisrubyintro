@@ -8,7 +8,7 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  # YOUR CODE HERE 
   arr.max(2).sum
 end
 
@@ -42,6 +42,21 @@ end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if s.empty?
+    return false
+  end
+  if s.count('01') == s.size
+    s.delete(" ")
+    dec = s.to_i(2)
+  else  
+    return false
+  end
+
+  if dec % 4 == 0
+    return true
+  else
+    return false
+  end
 end
 
 # Part 3
